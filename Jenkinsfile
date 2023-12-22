@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr"
+        registry = "324022521133.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr"
     }
     stages {
         stage('Checkout') {
