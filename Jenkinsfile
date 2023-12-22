@@ -13,7 +13,8 @@ pipeline {
            stage('Building image') {
              steps{
                   script {
-                   dockerImage = docker.build registry
+                   sh 'docker build -t jenkins-ecr .'
+
                    }
       }
            }
