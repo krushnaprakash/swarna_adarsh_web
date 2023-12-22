@@ -20,7 +20,9 @@ pipeline {
            }
     
             stage('Pushing to ECR') {
-             steps{       
+             steps{  
+                  
+          
     sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 150899561976.dkr.ecr.ap-south-1.amazonaws.com'
     sh 'docker tag jenkins-ecr:latest 150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
      sh 'docker push 150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
