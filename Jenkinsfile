@@ -20,10 +20,10 @@ pipeline {
             steps {  
                 sh '''
                     aws ecr get-login-password --region ap-south-1 |
-                    docker login --username AWS --password-stdin 150899561976.dkr.ecr.ap-south-1.amazonaws.com
+                    docker login --username AWS --password-stdin 324022521133.dkr.ecr.ap-south-1.amazonaws.com
                 '''
-                sh 'docker tag jenkins-ecr:latest 150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
-                sh 'docker push 150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
+                sh 'docker tag jenkins-ecr:latest 324022521133.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
+                sh 'docker push 324022521133.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
             }
         }
         stage('Stop previous containers') {
@@ -35,7 +35,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    sh 'docker run -d -p 3000:3000 --rm --name mypythonContainer 150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
+                    sh 'docker run -d -p 3000:3000 --rm --name mypythonContainer 324022521133.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr:latest'
                 }
             }
         }
