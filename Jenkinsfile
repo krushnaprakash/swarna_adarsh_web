@@ -3,12 +3,7 @@ pipeline {
      environment {
         registry = "150899561976.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecr>"
     }
-    stages {
-        stage('clean workspace') {
-            steps {
-                cleanWs()
-            }
-        }
+   
     stages {
           stage('Checkout') {
             steps {
